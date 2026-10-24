@@ -45,3 +45,13 @@ renv::snapshot()
 clinic_clean =
   clinic_clean %>%
   rename (id = patient_id)
+
+# Capitalise gender
+clinic_clean =
+  clinic_clean %>%
+  mutate(
+    sex = ifelse(
+      toupper(sex) == "M", "Male"
+      , ifelse(toupper(sex) == "F", "Female", NA)
+    )
+  )
