@@ -40,3 +40,8 @@ clinic_clean %>%
   )
 
 renv::snapshot()
+
+# Renaming patient_id to id
+clinic_clean =
+  clinic_clean %>%
+  rename (id = patient_id)
